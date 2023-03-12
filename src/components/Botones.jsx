@@ -1,10 +1,15 @@
 import React from "react";
 import { Boton } from "./Botones/Boton";
 
-export const Botones = ({ handleClick }) => {
+export const Botones = ({ handleClick, truee }) => {
   const generarBotones = (valor) =>
     valor.map((valores) => (
-      <Boton key={valores} valor={valores} handleClick={handleClick} />
+      <Boton
+        key={valores}
+        valor={valores}
+        handleClick={handleClick}
+        truee={truee}
+      />
     ));
 
   return (

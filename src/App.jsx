@@ -23,6 +23,27 @@ const App = () => {
     [2, 4, 6],
   ];
 
+  const colororiginal = (a, b, c) => {
+    document.getElementById(a).classList.remove("bg-green-500");
+    document.getElementById(b).classList.remove("bg-green-500");
+    document.getElementById(c).classList.remove("bg-green-500");
+    document.getElementById(a).classList.add("bg-black");
+    document.getElementById(b).classList.add("bg-black");
+    document.getElementById(c).classList.add("bg-black");
+  };
+
+  const cambiarcolor = (a, b, c) => {
+    document.getElementById(a).classList.remove("bg-black");
+    document.getElementById(b).classList.remove("bg-black");
+    document.getElementById(c).classList.remove("bg-black");
+    document.getElementById(a).classList.add("bg-green-500");
+    document.getElementById(b).classList.add("bg-green-500");
+    document.getElementById(c).classList.add("bg-green-500");
+    setTimeout(() => {
+      colororiginal(a, b, c);
+    }, 1000);
+  };
+
   const ganador = (arrayy) => {
     for (let i = 0; i < 8; i++) {
       let array = posicionesganadoras2[i];
@@ -34,6 +55,7 @@ const App = () => {
         arrayy[b] != null &&
         arrayy[c] != null
       ) {
+        cambiarcolor(a, b, c);
         return true;
       }
     }
@@ -60,7 +82,7 @@ const App = () => {
       setContador(1);
       setContador2(1);
       numeros.forEach((valor) => {
-        document.getElementById(valor).innerHTML = "";
+        document.getElementById(valor).innerText = "";
       });
     }, 1000);
   };
