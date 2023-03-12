@@ -44,20 +44,11 @@ const App = () => {
 
   const reset = (ganador) => {
     Array = [null, null, null, null, null, null, null, null, null];
-    // if (ganador === "X") {
-    //   setScore((score[0] += 1));
-    // } else {
-    //   if (ganador === "O") {
-    //     setScore((score[1] += 1));
-    //   }
-    // }
 
     if (ganador === "X") {
-      console.log("GANADOR X");
       setScore([scoree[0] + 1, scoree[1]]);
     } else {
       if (ganador === "O") {
-        console.log("GANADOR O");
         setScore([scoree[0], scoree[1] + 1]);
       } else {
         console.log("EMPATE");
@@ -95,12 +86,14 @@ const App = () => {
       setContador(0);
     }
     document.getElementById(valor).innerText = state;
-    if (contador2 === 8) {
+    if (contador2 === 9) {
       reset();
     }
   };
 
   const resetscore = () => {
+    numeros.forEach((valor) => (document.getElementById(valor).innerText = ""));
+    setState("X");
     setScore([0, 0]);
   };
 
