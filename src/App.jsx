@@ -7,6 +7,7 @@ let Array = [null, null, null, null, null, null, null, null, null];
 const App = () => {
   const [state, setState] = useState("X");
   const letras = ["X", "O"];
+  const [isTrue, setIstrue] = useState(false);
   const [contador, setContador] = useState(1);
   const [contador2, setContador2] = useState(1);
 
@@ -65,6 +66,7 @@ const App = () => {
   const numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
 
   const reset = (ganador) => {
+    setIstrue(true);
     Array = [null, null, null, null, null, null, null, null, null];
 
     if (ganador === "X") {
@@ -78,6 +80,7 @@ const App = () => {
     }
 
     setTimeout(() => {
+      setIstrue(false);
       setState("X");
       setContador(1);
       setContador2(1);
@@ -116,6 +119,8 @@ const App = () => {
   const resetscore = () => {
     numeros.forEach((valor) => (document.getElementById(valor).innerText = ""));
     setState("X");
+    setContador(1);
+    setContador2(1);
     setScore([0, 0]);
   };
 
@@ -134,7 +139,7 @@ const App = () => {
       </div>
       <div className="flex flex-col justify-center items-center">
         <div>
-          <Tablero handleClick={handleClick} />
+          <Tablero handleClick={handleClick} isTrue={isTrue} />
         </div>
         <div className="mt-2">
           <Scoreboard score={scoree} />

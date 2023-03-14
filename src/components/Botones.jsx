@@ -1,14 +1,14 @@
 import React from "react";
 import { Boton } from "./Botones/Boton";
 
-export const Botones = ({ handleClick, truee }) => {
+export const Botones = ({ handleClick, isTrue }) => {
   const generarBotones = (valor) =>
     valor.map((valores) => (
       <Boton
         key={valores}
         valor={valores}
         handleClick={handleClick}
-        truee={truee}
+        isTrue={isTrue}
       />
     ));
 
