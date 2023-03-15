@@ -8,7 +8,7 @@ export const Boton = ({ valor, handleClick, isTrue }) => {
 
   return (
     <button
-      className="button bg-black   w-40 h-40 text-8xl  text-white"
+      className="button bg-black tateti:w-40  tateti:h-40 w-28 h-28 text-8xl  text-white"
       id={valor}
       disabled={isTrue}
       onClick={() => {

@@ -25,9 +25,9 @@ const App = () => {
   ];
 
   const colororiginal = (a, b, c) => {
-    document.getElementById(a).classList.remove("bg-green-500");
-    document.getElementById(b).classList.remove("bg-green-500");
-    document.getElementById(c).classList.remove("bg-green-500");
+    document.getElementById(a).classList.remove("bg-yellow-500");
+    document.getElementById(b).classList.remove("bg-yellow-500");
+    document.getElementById(c).classList.remove("bg-yellow-500");
     document.getElementById(a).classList.add("bg-black");
     document.getElementById(b).classList.add("bg-black");
     document.getElementById(c).classList.add("bg-black");
@@ -37,9 +37,9 @@ const App = () => {
     document.getElementById(a).classList.remove("bg-black");
     document.getElementById(b).classList.remove("bg-black");
     document.getElementById(c).classList.remove("bg-black");
-    document.getElementById(a).classList.add("bg-green-500");
-    document.getElementById(b).classList.add("bg-green-500");
-    document.getElementById(c).classList.add("bg-green-500");
+    document.getElementById(a).classList.add("bg-yellow-500");
+    document.getElementById(b).classList.add("bg-yellow-500");
+    document.getElementById(c).classList.add("bg-yellow-500");
     setTimeout(() => {
       colororiginal(a, b, c);
     }, 1000);
@@ -125,8 +125,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex bg-emerald-900 gap-2 justify-evenly items-center h-screen">
-      <div className="text-[150px] pb-[150px] flex flex-col gap-4 items-center">
+    <div className="flex bg-emerald-900 gap-2 justify-evenly items-center tateti:h-full h-screen">
+      <div className="text-[150px] pb-[150px] tateti:flex hidden  flex-col gap-4  items-center">
         <div className="h-[160px] font-sans font-medium text-yellow-500">
           TA
         </div>
@@ -137,11 +137,11 @@ const App = () => {
           TI
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center">
+      <div className="pt-10 flex flex-col justify-center items-center">
         <div>
           <Tablero handleClick={handleClick} isTrue={isTrue} />
         </div>
-        <div className="mt-2">
+        <div className="mt-2 tateti:block w-full">
           <Scoreboard score={scoree} />
         </div>
         <button
@@ -150,8 +150,11 @@ const App = () => {
         >
           RESET
         </button>
+        <div className="mt-[9px] pb-3 text-gray-50">
+          Hecho con ❤ por Milton Ibarra
+        </div>
       </div>
-      <div className="text-[150px] pb-[150px] flex flex-col gap-4 items-center">
+      <div className="text-[150px] pb-[150px] tateti:flex hidden  flex-col  gap-4 items-center">
         <div className="h-[160px] font-sans font-medium text-yellow-500">
           TA
         </div>
