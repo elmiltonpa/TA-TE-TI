@@ -125,7 +125,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex bg-emerald-900 gap-2 justify-evenly items-center tateti:h-full h-screen">
+    <div className="flex bg-emerald-900 gap-2 justify-evenly tateti:items-center  tateti:h-full h-screen">
       <div className="text-[150px] pb-[150px] tateti:flex hidden  flex-col gap-4  items-center">
         <div className="h-[160px] font-sans font-medium text-yellow-500">
           TA
@@ -137,7 +137,10 @@ const App = () => {
           TI
         </div>
       </div>
-      <div className="pt-10 flex flex-col justify-center items-center">
+      <div className="pt-10 flex flex-col  items-center">
+        <div className="w-full text-8xl tateti:hidden flex items-center font-sans font-medium  justify-center  text-yellow-500">
+          TA TE Ti
+        </div>
         <div>
           <Tablero handleClick={handleClick} isTrue={isTrue} />
         </div>
