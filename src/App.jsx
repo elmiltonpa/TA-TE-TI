@@ -125,20 +125,14 @@ const App = () => {
   };
 
   return (
-    <div className="flex bg-emerald-900 gap-2 justify-evenly tateti:items-center  tateti:h-full h-screen">
+    <div className="flex bg-emerald-900 gap-2 justify-evenly tateti:items-center  tateti:h-screen h-screen ">
       <div className="text-[150px] pb-[150px] tateti:flex hidden  flex-col gap-4  items-center">
-        <div className="h-[160px] font-sans font-medium text-yellow-500">
-          TA
-        </div>
-        <div className="h-[160px] font-sans font-medium text-yellow-500">
-          TE
-        </div>
-        <div className="h-[160px] font-sans font-medium text-yellow-500">
-          TI
-        </div>
+        <div className="h-[160px] font-bb font-medium text-yellow-500">TA</div>
+        <div className="h-[160px] font-bb font-medium text-yellow-500">TE</div>
+        <div className="h-[160px] font-bb font-medium text-yellow-500">TI</div>
       </div>
       <div className="pt-10 flex flex-col  items-center">
-        <div className="w-full text-8xl tateti:hidden flex items-center font-sans font-medium  justify-center  text-yellow-500">
+        <div className="w-full text-6xl tateti:hidden flex items-center font-bb font-medium  justify-center  text-yellow-500">
           TA TE Ti
         </div>
         <div>
@@ -153,20 +147,12 @@ const App = () => {
         >
           RESET
         </button>
-        <div className="mt-[9px] pb-3 text-gray-50">
-          Hecho con ❤ por Milton Ibarra
-        </div>
+        <div className="mt-[9px] pb-3 text-gray-200 font-aa">Milton Ibarra</div>
       </div>
       <div className="text-[150px] pb-[150px] tateti:flex hidden  flex-col  gap-4 items-center">
-        <div className="h-[160px] font-sans font-medium text-yellow-500">
-          TA
-        </div>
-        <div className="h-[160px] font-sans font-medium text-yellow-500">
-          TE
-        </div>
-        <div className="h-[160px] font-sans font-medium text-yellow-500">
-          TI
-        </div>
+        <div className="h-[160px] font-bb font-medium text-yellow-500">TA</div>
+        <div className="h-[160px] font-bb font-medium text-yellow-500">TE</div>
+        <div className="h-[160px] font-bb font-medium text-yellow-500">TI</div>
       </div>
     </div>
   );
