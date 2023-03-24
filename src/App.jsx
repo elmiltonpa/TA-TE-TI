@@ -6,6 +6,7 @@ let Array = [null, null, null, null, null, null, null, null, null];
 
 const App = () => {
   const [state, setState] = useState("X");
+  const [jugador, setJugador] = useState("JUGADOR 1");
   const letras = ["X", "O"];
   const [isTrue, setIstrue] = useState(false);
   const [contador, setContador] = useState(1);
@@ -65,15 +66,24 @@ const App = () => {
 
   const numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
 
-  const reset = (ganador) => {
+  const reset = (ganador, state) => {
+    setJugador(jugador === "JUGADOR 1" ? "JUGADOR 2" : "JUGADOR 1");
     setIstrue(true);
     Array = [null, null, null, null, null, null, null, null, null];
 
-    if (ganador === "X") {
-      setScore([scoree[0] + 1, scoree[1]]);
-    } else {
-      if (ganador === "O") {
+    if (ganador === "JUGADOR 1") {
+      if (state === "X") {
+        setScore([scoree[0] + 1, scoree[1]]);
+      } else {
         setScore([scoree[0], scoree[1] + 1]);
+      }
+    } else {
+      if (ganador === "JUGADOR 2") {
+        if (state === "X") {
+          setScore([scoree[0], scoree[1] + 1]);
+        } else {
+          setScore([scoree[0] + 1, scoree[1]]);
+        }
       } else {
         console.log("EMPATE");
       }
@@ -100,10 +110,9 @@ const App = () => {
     }
     if (contador2 >= 5) {
       if (ganador(Array)) {
-        reset(state);
+        reset(jugador, state);
       }
     }
-
     setContador2(contador2 + 1);
     setState(letras[contador]);
     setContador(contador + 1);
@@ -117,6 +126,7 @@ const App = () => {
   };
 
   const resetscore = () => {
+    setJugador("JUGADOR 1");
     numeros.forEach((valor) => (document.getElementById(valor).innerText = ""));
     setState("X");
     setContador(1);
@@ -125,7 +135,17 @@ const App = () => {
   };
 
   return (
-    <div className="flex bg-emerald-900 gap-2 justify-evenly tateti:items-center  tateti:h-screen h-screen ">
+    <div className="select-none flex bg-emerald-900 gap-2 justify-evenly tateti:items-center  tateti:h-screen h-full ">
+      <div className="absolute text-3xl text-cyan-100 font-sans top-1">
+        EMPIEZA EL{" "}
+        <span
+          className={`${
+            jugador === "JUGADOR 1" ? "text-red-600" : "text-blue-700"
+          } font-bold`}
+        >
+          {jugador}
+        </span>
+      </div>
       <div className="text-[150px] pb-[150px] tateti:flex hidden  flex-col gap-4  items-center">
         <div className="h-[160px] font-bb font-medium text-yellow-500">TA</div>
         <div className="h-[160px] font-bb font-medium text-yellow-500">TE</div>
