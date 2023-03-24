@@ -84,8 +84,6 @@ const App = () => {
         } else {
           setScore([scoree[0] + 1, scoree[1]]);
         }
-      } else {
-        console.log("EMPATE");
       }
     }
 
@@ -101,7 +99,6 @@ const App = () => {
   };
 
   const handleClick = (valor) => {
-    console.log(state);
     if (document.getElementById(valor).innerText !== "") {
       return;
     } else {
